@@ -7,23 +7,26 @@ struct ListNode{
     int value;
     ListNode* next;
 };
-//void PrintListReversingly(ListNode* Head){
-//    ListNode* p = Head;
-//    stack<ListNode*> nodes;
-//    while(p!=NULL){
-//        nodes.push(p);
-//        p = p->next;
-//    }
-//    while(!nodes.empty()){
-//        p = nodes.top();
-//        cout<<p->value<<endl;
-//        nodes.pop();
-//    }
-//}
+void PrintListReversingly(ListNode* Head){
+    ListNode* p = Head;
+    stack<ListNode*> nodes;
+    while(p!=NULL){
+        nodes.push(p);
+        p = p->next;
+    }
+    while(!nodes.empty()){
+        p = nodes.top();
+        cout<<p->value<<endl;
+        nodes.pop();
+    }
+}
 int main(){
     ListNode* Head = NULL;
-    ListNode* p = Head;
+    ListNode* p = new ListNode();
     int i = 0;
+    p->value = i;
+    p->next = NULL;
+    Head = p;
     while(i<=10){
         ListNode* p1 = new ListNode();
         p1->value = i;
@@ -31,9 +34,9 @@ int main(){
         p->next = p1;
         p = p->next;
         i++;
-        cout<<i<<endl;
+        //cout<<i<<endl;
     }
-    //PrintListReversingly(Head);
+    PrintListReversingly(Head);
     return 0;
     
 }
