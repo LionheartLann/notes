@@ -21,14 +21,16 @@ void PrintListReversingly(ListNode* Head){
     }
 }
 int main(){
+    int i = 0;
     ListNode* Head = NULL;
     ListNode* p = new ListNode();
-    int i = 0;
-    p->value = i;
-    p->next = NULL;
+    //p->value = i;
+    //p->next = NULL;
     Head = p;
     while(i<=10){
         ListNode* p1 = new ListNode();
+        if(p == NULL)
+            p = p1;
         p1->value = i;
         p1->next = NULL;
         p->next = p1;
