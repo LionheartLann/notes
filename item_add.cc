@@ -6,12 +6,24 @@ using std::cerr;
 using std::endl;
 
 int main(){
-    Sales_item book;
-    Sales_item books;
+    Sales_item total;
     cout<<"input books:"<<endl;
-    while(cin>>book)
-        books+=book;
-    cout<<"total sum:"<<books<<endl;
+    if(cin>>total){
+        Sales_item book;
+        while(cin>>book){
+            if(book.isbn()==total.isbn()){
+                total+=book;
+            }else{
+                cout<<total<<endl;
+                total=book;
+            }
+        }
+    cout<<"total sum:"<<total<<endl;
+    }
+    else{
+        cerr<<"no input?"<<endl;
+        return -1;
+    }
     return 0;
 }
 
