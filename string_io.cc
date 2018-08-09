@@ -8,6 +8,6 @@ using std::string;
 
 int main(){
     string s;
-    while(cin>>s)
+    while(getline(cin, s))
         cout<<s<<endl;
 }
