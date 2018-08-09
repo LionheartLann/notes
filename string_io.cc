@@ -7,17 +7,30 @@ using std::endl;
 using std::string;
 
 int main(){
-    string s1, s2;
-    //while(getline(cin, s))
-        //cout<<s<<endl;
-    cin>>s1>>s2;
-    auto l1=s1.size(), l2=s2.size();
-    if(l1>l2){
-        cout<<s1<<endl;
-    }else if(l1<l2){
-        cout<<s2<<endl;
-    }else{
-        cout<<"=="<<endl;
+    //string s1, s2;
+    //cin>>s1>>s2;
+    //auto l1=s1.size(), l2=s2.size();
+    //if(l1>l2){
+    //    cout<<s1<<endl;
+    //}else if(l1<l2){
+    //    cout<<s2<<endl;
+    //}else{
+    //    cout<<"=="<<endl;
+    //}
+
+    //string s, big_string;
+    //while(cin>>s)
+        //big_string+=s;
+        //big_string+=' ';
+    string big_string(10,'d');
+    cout<<big_string<<endl;
+    for (auto &c:big_string){
+        c = toupper(c);
+        cout<<c<<endl;
     }
+    cout<<big_string<<endl;
+    string b;
+    cout<<b.empty()<<endl;
+    cout<<b[0]<<endl;
     return 0;
 }
