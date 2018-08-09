@@ -11,9 +11,10 @@ int main(){
     //while(getline(cin, s))
         //cout<<s<<endl;
     cin>>s1>>s2;
-    if(s1>s2){
+    auto l1=s1.size(), l2=s2.size();
+    if(l1>l2){
         cout<<s1<<endl;
-    }else if(s1<s2){
+    }else if(l1<l2){
         cout<<s2<<endl;
     }else{
         cout<<"=="<<endl;
