@@ -22,15 +22,17 @@ int main(){
     //while(cin>>s)
         //big_string+=s;
         //big_string+=' ';
-    string big_string(10,'d');
+    const string big_string(10,'d');
     cout<<big_string<<endl;
     for (auto &c:big_string){
-        c = toupper(c);
+        //c = toupper(c);
+        //c = 'X';// cannot be ""
         cout<<c<<endl;
     }
     cout<<big_string<<endl;
     string b;
     cout<<b.empty()<<endl;
     cout<<b[0]<<endl;
+    //string d(b[0]);
     return 0;
 }
