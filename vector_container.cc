@@ -9,7 +9,8 @@ using std::endl;
 using std::string;
 using std::vector;
 
-int main(){
+int string_vector(){
+
     vector<string> svec;
     string word;
     while(getline(cin,word))
@@ -44,6 +45,10 @@ int main(){
         }
         cout<<(*it)<<endl;
     }
+    return 0;
+}
+
+vector<int> create_int_vector(){
     // E3.23 doule the int vector
     cout<<"=======double the int vector======="<<endl;
     vector<int> ivec;
@@ -57,7 +62,38 @@ int main(){
     for(auto it=ivec.cbegin(); it!=ivec.cend();it++){
         cout<<*it<<endl;
     }
-
-    return 0;
+    return ivec;
 }
 
+int binary_search(vector<int> ivec){
+    // binary search by vector
+    auto left = ivec.cbegin();
+    auto right = ivec.cend();
+    //decltype(ivec.cbegin()) target;
+    int target;
+    cout<<"please input a target:"<<endl;
+    cin>>target;
+    while(left<=right){
+        auto mid = left + (right-left)/2;
+        if(*mid<target){
+            left = mid + 1;
+        }else if(*mid>target){
+            right = mid -1;
+        }else{
+            cout<<"========Found Target======="<<endl;
+            cout<<*mid<<endl;
+            return *mid;
+        }
+    }
+    cout<<"not found:"<<target<<endl;
+    return -1;
+}
+
+
+
+int main(){
+    vector<int> ivec;
+    ivec = create_int_vector();
+    binary_search(ivec);
+    return 0;
+}
