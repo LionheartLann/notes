@@ -44,6 +44,20 @@ int main(){
         }
         cout<<(*it)<<endl;
     }
+    // E3.23 doule the int vector
+    cout<<"=======double the int vector======="<<endl;
+    vector<int> ivec;
+    for(int i=0; i<=10; i++){
+        ivec.push_back(i);
+    }
+    for(auto it=ivec.begin(); it!=ivec.end();it++){
+        (*it)=(*it)*2;
+    }
+
+    for(auto it=ivec.cbegin(); it!=ivec.cend();it++){
+        cout<<*it<<endl;
+    }
+
     return 0;
 }
 
