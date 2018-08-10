@@ -5,6 +5,7 @@ using std::cin;
 using std::cout;
 using std::cerr;
 using std::endl;
+//using std::uppercase;
 using std::string;
 using std::vector;
 
@@ -31,9 +32,16 @@ int main(){
 
     //text input test
     cout<<"size of vector is:"<<svec.size()<<endl;
-    for(auto it=svec.cbegin(); it!=svec.cend() && !it->empty(); it++)
+    cout<<"=======original text======="<<endl;
+    for(auto it=svec.cbegin(); it!=svec.cend(); it++)
         cout<<(*it)<<endl;
 
+    cout<<"=======uppercase text======="<<endl;
+    for(auto it=svec.begin(); it!=svec.end() && !it->empty(); it++){
+        for(auto i:(*it)){
+            (i) = toupper(i);
+            cout<<i<<endl;}
+        cout<<(*it)<<endl;}
     return 0;
 }
 
