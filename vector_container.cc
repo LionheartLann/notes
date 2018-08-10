@@ -38,10 +38,12 @@ int main(){
 
     cout<<"=======uppercase text======="<<endl;
     for(auto it=svec.begin(); it!=svec.end() && !it->empty(); it++){
-        for(auto i:(*it)){
+        for(auto &i:(*it)){
             (i) = toupper(i);
-            cout<<i<<endl;}
-        cout<<(*it)<<endl;}
+            //cout<<i<<endl;
+        }
+        cout<<(*it)<<endl;
+    }
     return 0;
 }
 
