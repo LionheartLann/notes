@@ -71,4 +71,5 @@ int main(){
     //auto length = std::size(preorder); // C++17
     cout<<"size of input array:"<<length<<endl;
     Construct(preorder, inorder, length);
+    return 0;
 }
