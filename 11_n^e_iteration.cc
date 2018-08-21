@@ -23,7 +23,7 @@ double Power(double base, int exponent){
 }
 
 int main(){
-    double base=0, result=0;
+    double base=0, result=1;
     int exponent=0;
     cout<<"Input base && exponent:"<<endl;
     cin>>base>>exponent;
