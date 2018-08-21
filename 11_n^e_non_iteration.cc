@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 /*
- * base^exponent iteration
+ * base^exponent non iteration
  */
 
 int main(){
@@ -40,6 +40,7 @@ int main(){
     if(flag==1){
         result = 1/result;
     }
-    return result;
+    cout<<result<<endl;
+    return 0;
 }
 
