@@ -16,6 +16,7 @@ int main(){
 
     // how to judge N is instance of int?
     cout<<typeid(N).name()<<endl;
+    cout<<(typeid(N)==typeid(1))<<endl;
     if(N<0 || S<0 || M<0){
         throw std::runtime_error("N&&S&&M must be positive");
     }
