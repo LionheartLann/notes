@@ -5,6 +5,10 @@ using std::cout;
 using std::endl;
 using std::vector;
 
+bool condition(int number){
+    return (number&1)==1;// is odd
+}
+
 int main(){
     vector<int> a;
     int i=0;
@@ -25,13 +29,13 @@ int main(){
     }
     int p1=0, p2=a.size()-1;
     int t=0;
-    while(p1<=p2){
+    while(p1<p2){
         cout<<"p1:\t"<<p1<<"\tp2:\t"<<p2<<endl;
-        if((a[p1]&1)==1){//odd
+        if(condition(a[p1])){//odd
             p1++;
         }else{// p1 is even
             // p2 look for an odd 
-            if((a[p2]&1)==1){
+            if(condition(a[p2])){
                 //swap p1 p2
                 t = a[p1];
                 a[p1] = a[p2];
