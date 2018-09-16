@@ -32,6 +32,38 @@ ListNode* get_kth(ListNode* head, unsigned int k){
 
 }
 
+ListNode* reverse_LinkedList(ListNode* head){
+    if(head == nullptr || head->next == nullptr){
+        return head;
+    }
+    ListNode* p1=head, *p2=head->next;
+    head = p2;
+    p1->next=NULL;// very important!!! point last element of linked list to NULL
+    while(head->next){
+        head=head->next;
+        p2->next=p1;
+        p1=p2;
+        p2=head;
+    }
+    p2->next=p1;
+    return p2;
+
+}
+
+ListNode* print_LinkedList(ListNode* head){
+    // print 
+    if(head == nullptr){
+        return head;
+    }
+    ListNode* p = head;
+    while(p->next){
+        cout<<p->val<<endl;
+        p = p->next;
+    }
+    cout<<p->val<<endl;
+    return head;
+}
+
 int main(){
     // create
     int N=0, k=0;
@@ -49,16 +81,16 @@ int main(){
         head->next = node;
         head = node;
     }
-
-    // print 
-    ListNode* p = h;
-    while(p->next){
-        cout<<p->val<<endl;
-        p = p->next;
-    }
-    cout<<p->val<<endl;
-
-    get_kth(h, k);
+    head->next=NULL;
+    head = h;
+    cout<<"original linked list:"<<endl;
+    print_LinkedList(head);
+    // get kth in reverse order
+    get_kth(head, k);
+    // reverse list
+    head=reverse_LinkedList(head);
+    cout<<"reversed linked list:"<<endl;
+    print_LinkedList(head);
 
     return 0;
 
